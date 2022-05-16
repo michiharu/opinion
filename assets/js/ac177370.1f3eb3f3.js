@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkopinions=self.webpackChunkopinions||[]).push([[327],{1335:function(o){o.exports=JSON.parse('{"allTagsPath":"/opinions/blog/tags","name":"oop","count":1,"permalink":"/opinions/blog/tags/oop"}')}}]);

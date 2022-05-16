@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopinions=self.webpackChunkopinions||[]).push([[535],{5641:function(i){i.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"UNIX\u54f2\u5b66\u306b\u5b66\u3076\u30b7\u30f3\u30d7\u30eb","permalink":"/opinions/blog/unix-philosophy"}]}')}}]);
