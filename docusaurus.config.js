@@ -4,17 +4,20 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const title = 'OPINIONS';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  title,
+  tagline: 'Written by michiharu',
+  url: 'https://michiharu.github.io/opinions/',
+  baseUrl: '/opinions/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'michiharu', // Usually your GitHub org/user name.
+  projectName: 'opinions', // Usually your repo name.
+  trailingSlash: true,
 
   presets: [
     [
@@ -43,7 +46,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title,
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -57,7 +60,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/michiharu/opinions',
             label: 'GitHub',
             position: 'right',
           },
@@ -101,7 +104,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/michiharu/opinions',
               },
             ],
           },
