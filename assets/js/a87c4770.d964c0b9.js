@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopinions=self.webpackChunkopinions||[]).push([[251],{3544:function(o){o.exports=JSON.parse('{"permalink":"/blog/tags/simple","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

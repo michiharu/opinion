@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>OPINIONS Blog</title>
+        <link>https://your-docusaurus-test-site.com/blog</link>
+        <description>OPINIONS Blog</description>
+        <lastBuildDate>Tue, 03 May 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[シンプルさについて語るときに僕の語ること]]></title>
+            <link>https://your-docusaurus-test-site.com/blog/simple-is</link>
+            <guid>simple-is</guid>
+            <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[タイトルの通りシンプルさについて語りたいと思います。]]></description>
+            <content:encoded><![CDATA[<p>タイトルの通りシンプルさについて語りたいと思います。</p><p>書き始める前に春樹さんの次の言葉を思い出しました。</p><blockquote><p>説明しなくてはそれがわからんというのは、つまり、どれだけ説明してもわからんということだ</p></blockquote><p>シンプルではないコードが積み上がったプロジェクトでいろいろなことを考えたり思い出したりしたので、
+説明しても分からないかもしれないけど、
+とにかく私の考えるシンプルについてちゃんとどこかに書いておきたいと思い立った次第です。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="unix哲学に学ぶシンプル">UNIX哲学に学ぶシンプル<a class="hash-link" href="#unix哲学に学ぶシンプル" title="Direct link to heading">​</a></h2><p>実際にWikiを読んでみることをお勧めしますが、
+<a href="https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6" target="_blank" rel="noopener noreferrer">UNIX哲学</a>には深くうなづけるたくさんの格言があります。</p><p>シンプルさこそが重要であるという考え方は、UNIXの哲学として浸透しています。
+そのUNIX哲学でシンプルさを評価している言葉やシンプルさを実現するための方法論をここで紹介します。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="シンプルさについて触れている格言">シンプルさについて触れている格言<a class="hash-link" href="#シンプルさについて触れている格言" title="Direct link to heading">​</a></h3><ul><li>それぞれのプログラムが1つのことをうまくこなすように<ul><li>新しい仕事をするために、新しい「機能」を追加して古いプログラムを複雑にするのではなく、
+新しいプログラムを構築する</li></ul></li><li>一つのことをうまくやるプログラムを書く</li><li>プログラムを書いたり、テストしたり、実行したりするのが簡単に行えるように</li><li>スマートなデータを使うつまらないコードを書け</li><li>小さいものは美しい</li><li>各プログラムが一つのことをうまくやるようにせよ</li><li>効率よりも移植しやすさを選べ</li><li>ソフトウェアを梃子(てこ)として利用せよ</li><li>拘束的なユーザーインターフェースは作るな</li></ul><h3 class="anchor anchorWithStickyNavbar_mojV" id="より悪いことはより良いことだ-worse-is-better">より悪いことは、より良いことだ （Worse is better）<a class="hash-link" href="#より悪いことはより良いことだ-worse-is-better" title="Direct link to heading">​</a></h3><p>リチャード・P・ガブリエルは、UNIXの重要な優位性のひとつは彼が「より悪いことは、より良いことだ」（"Worse is better"）という用語に込める
+デザイン哲学を体現しているところにあると述べている。</p><p>「より悪いことは、より良いことだ」式のデザイン・スタイルでは、インターフェースと実装の両面がシンプルであることが、
+システムにおける他のいかなる特性よりも重視される――正確さ、堅牢さ、完全さよりも、である。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="レイモンド-unixプログラミングの技法">レイモンド: UNIXプログラミングの技法<a class="hash-link" href="#レイモンド-unixプログラミングの技法" title="Direct link to heading">​</a></h3><p>エリック・S・レイモンドは著書『The Art of UNIX Programming』<!-- -->[6]<!-- -->の中で、
+UNIX哲学を "<strong>Keep it Simple, Stupid</strong>" （KISS原則、「シンプルでつまらないものに保て」）という、
+広く使われている工学哲学として要約した。</p><p>そしてレイモンドは、彼がいかにこの総体的な哲学がUNIXの文化的規範として適用されていると信じているか述べている。</p><ul><li><strong>モジュール化のルール</strong> クリーンなインターフェースで接続されるシンプルなパーツを書け<ul><li>プログラムは、単純な部品同士を、しっかり目の定義を持つインターフェースでつなぎ合わせたものとして書かれるべきです。
+そうすれば、問題は局所的なものとなり、プログラムの一部は将来のバージョンで新機能をサポートするために交換することができます。</li><li>このルールの狙いは、複雑で長くて読めないコードをデバッグする時間を節約することにあります。</li></ul></li><li><strong>明瞭さのルール</strong> 明瞭さは独創性よりも良い<ul><li>開発者が最も意志疎通を図るべき相手はコンピュータではなく、プログラムを読み、保守を行う自分を含めた開発者であるかのようにプログラムを書くべきです。</li><li>このルールは、将来そのコードを扱う人にとって、コードが読みやすく、理解しやすいものにすることを目的としています。</li></ul></li><li><strong>分割のルール</strong> ポリシーをメカニズムから分離せよ、インターフェースをエンジンから分離せよ<ul><li>開発者は、プログラムのメカニズムとプログラムのポリシーを分離する必要があります。
+一つの方法として、プログラムをフロントエンドのインターフェースと、そのインターフェースが通信するバックエンドのエンジンに分ける等があります。</li><li>このルールは、メカニズムを崩さずにポリシーを変更できるようにし、結果的にバグの数を減らすことを目的としています。</li><li>分割ルールはUIライブラリーを使った開発において、テーマシステムによるコンポーネントとスタイルの分割にも同様に適用できます。</li></ul></li><li><strong>シンプルさのルール</strong> シンプルさを求めてデザインせよ<ul><li>シンプルさを求めてデザインせよ、複雑にしなければならない場合に限り、複雑さを加えよ。</li><li>開発者はシンプルなデザインを心掛けるべきです。プログラムを小さく分かりやすい協調性を持ったピースに分割する方法を模索してください。</li><li>このルールは、開発者が「緻密（ちみつ）で美しく複雑な」実際にはバグだらけのプログラムを書いてしまうことを防ぐためのものです。</li></ul></li><li><strong>倹約のルール</strong> 大きなプログラムを書くのは、他に何もできないことが実証された場合のみ<ul><li>開発者は大きなプログラムを書くことを避けるべきです。</li><li>失敗もしくは妥協的アプローチへの開発時間の過剰投資を防ぐことが、このルールの目的です。
+これらは膨大な作業の数々を破棄したくないというプログラム所有者の気持ちが原因でおこります。
+小さなプログラムは、最適化やメンテナンスが容易であるだけでなく、廃棄する際も削除が容易です。</li></ul></li><li><strong>透明性のルール</strong> 透明性を求めてデザインせよ 調査とデバッグが簡単になる<ul><li>開発者は、将来そのプロジェクトに参加する開発者が、自分の思考プロセスを明瞭に見ることができるように書き、
+有効な入力と正しい出力を容易に識別できる入出力形式を使用することによって、可視性と発見性を設計する必要があります。</li><li>このルールにより、デバッグにかかる時間を短縮し、プログラムの寿命を延ばすことを目的としています。</li></ul></li><li><strong>頑丈さのルール</strong> 頑丈さは透明性とシンプルさから生まれる<ul><li>開発者は、透明性と発見力を高める設計をすることで、堅牢なプログラムを設計する必要があります。
+なぜなら、理解しやすいコードは、複雑なプログラムでは予見できないような予期せぬ状況に対してストレステストを行いやすいからです。</li><li>このルールは、開発者が堅牢で信頼性の高い製品を構築できるようにすることを目的としています。</li></ul></li><li><strong>代表のルール</strong> 知識をデータに織り込め<ul><li>知識をデータに織り込め。するとプログラムのロジックをつまらなくて頑丈なものにできる。</li><li>開発者は、選択に迫られたとき、プログラムの手続き的なロジックよりも、データをより複雑にすることを選択すべきです。
+なぜなら、人間にとって複雑なデータは、複雑なロジックに比べて理解しやすいからです。<ul><li>「データを複雑に」という表現は誤解を生むかもしれないので補足します。<br>
+例えばユーザーの情報を、<code>{ "info": "1,36" }</code>というデータで表現しているとします。
+1は男性（1は女性）、36が年齢を意味しているとしましょう。<code>{ info: string }</code>という構造はシンプルですね。<br>
+しかし、その代わりに<code>{ "sex": "man", "age": 36 }</code>というより複雑なデータ構造を使うことにより、
+そのデータを扱うプログラムをシンプルにすることが出来る、ということだと解釈してください。</li></ul></li><li>このルールは、プロジェクトに携わるどの開発者にとってもプログラムを読みやすくすることで、プログラムの保守を可能にすることを目的としています。</li></ul></li><li><strong>沈黙のルール</strong> 余計な出力をすべきではない 他の開発者にとってただ邪魔なだけである<ul><li>開発者は、不要な出力をしないようにプログラムを設計する必要があります。</li><li>このルールは、他のプログラムや開発者が、冗長な出力を解析することなく、プログラムの出力から必要な情報を選び出せるようにすることを目的としています。</li></ul></li><li><strong>修復のルール</strong> 失敗しなければならないときは、騒がしく、かつできるだけ早く失敗せよ<ul><li>開発者は、故障の原因が特定しやすく、診断しやすい、つまり「音を立てて故障する」プログラムを設計する必要があります。</li><li>このルールは、プログラムからの不正な出力が入力となり、他のコードの出力が検出されずに破損することを防ぐことを目的としています。</li></ul></li><li><strong>生成のルール</strong> hand-hackingは避けよ<ul><li>プログラムを書けるときに、プログラムを書くためにプログラムを書け。</li><li>開発者は手書きでコードを書くことを避け、代わりに抽象的な高水準プログラムを書いて、コードを生成する必要があります。</li><li>このルールは、ヒューマンエラーを減らし、時間を節約することを目的としています。</li></ul></li></ul><h2 class="anchor anchorWithStickyNavbar_mojV" id="分けることでシンプルになる">分けることでシンプルになる<a class="hash-link" href="#分けることでシンプルになる" title="Direct link to heading">​</a></h2><p>ソフトウェア開発の歴史を振り返るとしたら、きっと欠かせないキーワードがオブジェクト指向でしょう。
+いろんな技術書の「はじめに」などでオブジェクト指向について語られていますね。</p><p>ソフトウェア開発は複雑さとの闘いの歴史であり、オブジェクト指向によってプログラムをオブジェクトという単位に分割・整理するという手法が、
+次第に複雑になっていくソフトウェアへの要求に対して開発者が考えを組み立てるのに役立った、という話を本で読みました。</p><p>オブジェクト指向による設計が必須であるとは考えませんが、<strong>分けることでシンプルになる</strong>というのは間違いないと思います。
+例えば関数を作ることも関心ごとを分けて整理するためのとても有効な方法です。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="共通化の条件">共通化の条件<a class="hash-link" href="#共通化の条件" title="Direct link to heading">​</a></h2><p>同じような処理を記述している場合に、処理を共通化出来ないかと考えるのは自然なことだと思います。
+しかし、共通化したためにコードが複雑になるケースもあります。
+共通化はシンプルさを破壊する危険があるということを十分に認識しておく必要があります。</p><p>例えば安易な覚悟で処理を共通化させ、その共通化コードを使っていてバグが見つかった状況を想像してください。</p><p>残念なことにその共通化コードにはテストもドキュメントもありません。
+あなたが共通化コードを書いたのでない場合、まず共通化コードの使い方を間違えている可能性を考えて共通化コードを読みます。
+抽象的に書かれた共通化コードを理解するのは、共通化されていないコードを読むよりも大変です。</p><p>さらに悪いことに、共有化コードの内部のバグであることが特定できました。
+このバグを修正するには、当然そのコードに依存するすべてのコードに注意を払いながら修正方法を検討しなくてはいけません。</p><p>そのような開発体験は最悪で、最初から書き直したい気持ちになります。</p><p>処理を共通化を検討するために私が考えた必須条件は次の通りです。</p><ul><li>共通化対象である「1つのこと」を、きちんと言語化できるか</li><li>共通処理の実装を完成させるだけでなく、テストとドキュメントを充実させるコストを払う価値があるか</li></ul><p>最初の条件をクリアしている場合、大抵は第２の条件がほとんどハードルになりません。
+最初の条件をクリアしていない場合はテストやドキュメントが充実している場合でも、コードの可読性を下げてしまう恐れがあります。
+つまり共通化によってコードが短くなっているとしてもシンプルさを失っており、それを利用するためのコードを書くためにたくさんの時間を必要とします。</p><p>すべてのコードはシンプルさが追求されるべきだと考えますが、
+共通化されるコードは他から依存されないコードよりも、シンプルさについてより注意を向けておく必要があります。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="nnより11">N:Nより1:1<a class="hash-link" href="#nnより11" title="Direct link to heading">​</a></h2><p>プログラミング言語も日々進化を続けていて、より多くの言語で採用されている仕様・機能はそれだけ開発者からの支持されているとみることが出来ます。</p><p>例えばPythonが静的型付け言語としての機能を獲得し、型付けして開発するのが当たり前になってきています。
+またRustの所有権というアイディアはSwiftにも取り込まれました。
+これらのプログラミング言語の進化からプログラマーが必要としている仕様・機能について知ることが出来ると考えています。</p><p>そして本題の「N:Nより1:1」は何について触れたいのかというと、キーワード引数です。</p><p>RubyやPython、そして比較的新しいSwift, Kotlinといったプログラミング言語で使える機能です。</p><p>キーワード引数とは関数やメソッドに引数を渡す場合に、キーワードと値を1:1で渡す機能です。
+キーワード引数の機能がない場合は引数の順序と意味を宣言元のコードを読んでよく確認する必要がありますが、
+キーワード引数では引数の意味と渡す値を1:1で対応させるためミスが起きにくいです。</p><p>ちなみにPythonコミュニティーではキーワード引数の利用はオプションですが、Swiftではキーワード有りで呼び出す方法がデフォルトです。
+一応Swiftでもキーワードを宣言せずに呼び出せる関数も作れます。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="javaコミュニティーによるnnを避ける工夫">JavaコミュニティーによるN:Nを避ける工夫<a class="hash-link" href="#javaコミュニティーによるnnを避ける工夫" title="Direct link to heading">​</a></h3><p>Javaにはキーワード引数のような機能はありませんが、呼び出し元と呼び出し先で順序を間違えるリスクはもちろん致命的であると認識されています。
+そのためコンストラクタに3つ以上の引数を渡す場合は、<code>Builder</code>パターンという方法によってN:Nではなく1:1の記述によって
+順序によるミスを防いでいます。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="builderパターンを使わないケース"><code>Builder</code>パターンを使わないケース<a class="hash-link" href="#builderパターンを使わないケース" title="Direct link to heading">​</a></h4><p><img loading="lazy" alt="`Builder`パターンを使わないケース" src="/assets/images/not-builder-dabbee68680453992a65c6805d65e79b.png" width="1738" height="132" class="img_E7b_"></p><h4 class="anchor anchorWithStickyNavbar_mojV" id="builderパターンを使うケース"><code>Builder</code>パターンを使うケース<a class="hash-link" href="#builderパターンを使うケース" title="Direct link to heading">​</a></h4><p><img loading="lazy" alt="`Builder`パターンを使うケース" src="/assets/images/with-builder-46e5bbd133e02daee8ebc4ddab9a814d.png" width="1522" height="300" class="img_E7b_"></p><h3 class="anchor anchorWithStickyNavbar_mojV" id="jstsコミュニティーによるnnを避ける工夫">JS/TSコミュニティーによるN:Nを避ける工夫<a class="hash-link" href="#jstsコミュニティーによるnnを避ける工夫" title="Direct link to heading">​</a></h3><p>JavaScript, TypeScriptにはキーボード引数がありませんが、
+Javaとは違いJavaScriptは構造体（オブジェクト）の取り扱いが大変簡単であるため、
+複数の引数を必要とする場合は1つのオブジェクトに値を格納して渡すことでN:Nを避けることが出来ます。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="sqlに感じるnnの課題">SQLに感じるN:Nの課題<a class="hash-link" href="#sqlに感じるnnの課題" title="Direct link to heading">​</a></h3><p>RDBにおいてカラムの数が10を超えることは特別に異常なことではありません。
+そしてSQL直書きで<code>INSERT</code>や<code>UPDATE</code>といった文を使用する場合は、
+列挙するカラム名と値の列挙順序を別々の場所で合わせるというミスを生みやすい作業を強いられることになります。
+カラムの数が多いほど、そのN:Nを合わせる作業は人が注意を払ってやるべき作業だとは思えず、
+コンピューターに任せるべき作業だと感じます。</p><p>そして、この状況を改善したいOSSコミュニティーの情熱は
+SQLの書き味を向上させるためのエディターなどの改良ではなく、
+SQLを直接書かないORM<sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>の開発に向けられています。</p><p>ORMなどのソリューションはまだ未成熟な点やデメリットはあるものの、
+多くの人がこれらのソリューションと直書きのSQLを併用しているようです。</p><ul><li><a href="https://jp.quora.com/SQL%E7%9B%B4%E6%9B%B8%E3%81%8D%E6%B4%BE%E3%81%A7%E3%81%99%E3%81%8C-%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF%E5%85%A8%E7%9B%9B%E3%81%A7SQL%E7%9B%B4%E6%9B%B8%E3%81%8D%E3%81%97%E3%81%A6%E3%81%84" target="_blank" rel="noopener noreferrer">SQL直書き派ですが、フレームワーク全盛でSQL直書きしている人は少数ですか？ORマッパーはブラックボックス的で
+チューニングとか色々と行き詰まらないかなと思ってしまう。</a>への回答</li><li><a href="https://jp.quora.com/%E3%83%99%E3%83%86%E3%83%A9%E3%83%B3%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%81%AF-%E5%AE%9F%E8%A1%8C%E3%81%95%E3%82%8C%E3%82%8BSQL%E3%81%8C%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF" target="_blank" rel="noopener noreferrer">ベテランエンジニアは、実行されるSQLがブラックボックスという理由で
+ORマッパーは使わない人が多いですか？</a>への回答</li></ul><p>ORMはN:Nの記述の解消だけではなく、型安全にクエリーを組み立てられる、テーブル名やカラム名の補完が効くといった
+より多くの問題を解決しようとしています。これらのサポートにより快適にクエリーを書くことが出来ます。</p><p>私のSQLとの付き合い方は、今のところ次のような方針がよい塩梅かなと思っています。</p><ul><li>集計処理、トランザクションなど、安全性やパフォーマンスに特別の注意を払いたい処理はSQLを直書きする</li><li>シンプルなINSERT、UPDATEなどはORMが組み立てるクエリーも十分にテストされ洗練されていると
+考えられるのでORMに任せる</li></ul><h2 class="anchor anchorWithStickyNavbar_mojV" id="easyよりもsimpleを">EasyよりもSimpleを<a class="hash-link" href="#easyよりもsimpleを" title="Direct link to heading">​</a></h2><p>VueはEasy、ReactはSimpleであると言われます。</p><p>ReactがVueよりもシンプルであるにも関わらず難しいと言われている理由が、
+関数型プログラミングへのパラダイムシフトが要求されるためだと思います。</p><p>Reactの公式ページでは「関数型プログラミングの知識は不要である」と謳っていますが、
+Reactの思想の出身としては紛れもなく関数型プログラミングであり、
+私は関数型プログラミングでUIを構築出来ることこそがReact最大の武器だと考えています。</p><p>その武器が、なぜ難しいのでしょうか？</p><p>そのように評価される理由の１つは、エンジニアは大抵、命令型プログラミングを最初に経験しているためです。
+命令型と関数型、どちらの方が簡単かというと慣れによる偏りを除けば関数型プログラミングの方が簡単です。
+（もちろん個人の見解です。）</p><p>ただ関数型プログラミングを見慣れているエンジニアが少数派であるため、
+初見ではReactのコードを難しく感じている、ということだと思います。</p><p>なぜVueは簡単なのでしょうか？</p><p>それはフロントエンドエンジニアの必須知識であるHTML, CSSを完全にそのまま活かせるからではないでしょうか。
+つまり大きなパラダイムシフトを要求されることなく小さな学習ステップでVueを始めることが出来る<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>、ということだと思います。</p><p>今度は、フロントエンドエンジニアにとって小さな学習ステップでスタートできるVueが、
+なぜReactよりもシンプルではないのでしょうか？</p><p>それは様々な開発時の要件それぞれにショートハンドを用意していて、
+開発が進むにつれてそれらの記法が混ざっていくことになり、
+コンポーネントが管理するデータの振る舞いもその記述方法の数だけ異なります。</p><p>「〇〇がしたい」ということをReactより短い記述で実現できるケースが多いですが、
+そのデメリットとして開発者がそれらのショートハンドを理解するための学習コストや、
+関数型プログラミングではないため、変数の変化をきちんと理解・管理するためのスキルが要求されるなどが挙げられると思います。</p><p>関数型プログラミングのパラダイムのReact vs マルチパラダイムのVueという文脈以外でどちらがシンプルであるかを比較するために、
+提供されている手段の数に着目することは参考になると思います。</p><p>ReactはVueよりもより少ない手段が提供されていますが、
+ReactとVueを使った開発で実現できることの差はありません。</p><p>そう考えるとReactのコードがシンプルになることは容易に想像できると思います。</p><p>コードの書き手側の気持ちとしては短く書けた方が楽かもしれませんが、読み手側の気持ちとしては書き方に幅がない方が理解が簡単です。
+この視点において、Reactが支持される理由とGo言語が支持される理由は同じだと思います。</p><p>ちなみに<a href="https://trends.google.co.jp/trends/explore?q=%2Fm%2F012l1vxv,%2Fm%2F0j45p7w,%2Fg%2F11c0vmgx5d&amp;geo=,,&amp;date=today%205-y,today%205-y,today%205-y&amp;cat=13#TIMESERIES" target="_blank" rel="noopener noreferrer">React vs Vue vs AngularJSのGoogleトレンドによる比較</a>
+を見れば、これらのライブラリーのうちReactが最も人気であるということがはっきり分かります。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="プログラミング言語に制限を掛けることでを言語をシンプルに使う">プログラミング言語に制限を掛けることでを言語をシンプルに使う<a class="hash-link" href="#プログラミング言語に制限を掛けることでを言語をシンプルに使う" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_mojV" id="linterによってシンプルになったjavascript">LinterによってシンプルになったJavaScript<a class="hash-link" href="#linterによってシンプルになったjavascript" title="Direct link to heading">​</a></h3><p>JavaScriptは非常に歴史のある言語ですね。そして近年はとても人気のある言語の一つです。</p><p>しかし少なくとも15年前はJavaScriptの一部の雑な言語使用を理由に
+開発者からは倦厭されがちな言語だったと記憶しています。</p><p>こちらはJavaScriptの雑な仕様を活用したハックの例です。解説がないと訳がわからないですね。</p><div class="codeBlockContainer_I0IT language-js theme-code-block"><div class="codeBlockContent_wNvx" style="color:#393A34;background-color:#f6f8fa"><pre tabindex="0" class="prism-code language-js codeBlock_jd64 thin-scrollbar"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token operator" style="color:#393A34">-</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token plain"> fail</span><br></span></code></pre><button type="button" aria-label="Copy code to clipboard" title="Copy" class="copyButton_eDfN clean-btn"><span class="copyButtonIcons_W9eQ" aria-hidden="true"><svg class="copyButtonIcon_XEyF" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_i9w9" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div><p>他に、普通に開発していてもJavaScriptをよく知っていないとデバックの難しい仕様も多数あります。</p><ul><li><code>==</code>と<code>===</code>で異なる結果になるケースがある</li><li><code>typeof null === 'object'</code>は<code>true</code></li></ul><p>Badなパーツ（言語仕様）があるからこそ、『JavaScript Good Parts』という本も出版されました。</p><p>そして時代は流れました。
+私がフルコミットのエンジニアになった6年前には既に、JavaScriptの悪い仕様に依存したコードが書けないように、
+ESLintを活用して開発するのが当たり前になっていました。</p><p>歴史のあるプログラミング言語は後方互換性のために仕様を削ることが難しいです。
+しかし新規プロジェクトでは洗練されていない言語仕様を前提とするようなコードを書きたくありません。
+このような経緯から現在では元々言語が持っている仕様の一部を制限して開発できるような仕組みが整っています。</p><p>多くの言語仕様を持つ言語の性質について「言語にパワーがある」という表現をしますが、これは必ずしも褒め言葉ではありません。
+たくさんの言語仕様があるということは、それだけコードが無秩序になりやすいためです。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="シンプルに設計されたgo言語">シンプルに設計されたGo言語<a class="hash-link" href="#シンプルに設計されたgo言語" title="Direct link to heading">​</a></h3><p>モダンな言語の1つにGoogleが開発しているGo言語があります。
+JavaScriptとは対照的に歴史の浅い言語で、言語のパワーを極限まで削ぎ落として設計された言語です。</p><p>言語仕様がとても絞られているために初心者が仕様を覚えて戦力になるまで1ヶ月程度である、という話です。
+初級者に学ばせて育て、中級者程度の戦力として活躍させるために効率の良い言語として設計されたそうです。</p><p>速度についてはC, C++といった最速を誇る言語よりやや遅いですが、Pythonのような言語の約10倍速いです。
+この背景としては、言語仕様が少ないためコンパイラー側から見た時のインプットがシンプルとなり、
+全体的な言語としての開発や局所的なパフォーマンスチューニングが実施可能だったのだろうと思います。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="状態--結合--複雑性--コード量">状態 &gt; 結合 &gt; 複雑性 &gt; コード量<a class="hash-link" href="#状態--結合--複雑性--コード量" title="Direct link to heading">​</a></h2><p>このトピックについては完全にこちらの記事の受け売りですが、激しく同意できる内容だったので紹介します。</p><p><a href="https://ohbarye.hatenablog.jp/entry/2022/01/31/state-coupling-complexity-code" target="_blank" rel="noopener noreferrer">状態、結合、複雑性、コード量の順に最適化する</a></p><p>リンク先は2〜3分で読める短い内容なので是非読んでみてください。</p><p>記事の内容をまとめると次の通りです。</p><blockquote><p>私は状態 (state)、結合 (coupling)、複雑性 (complexity)、コード量 (code) の順に削減することでコードを最適化する。</p><ul><li>コードがよりステートレスになるなら、結合を増やすこともいとわない</li><li>結合を減らすためには、コードをもっと複雑にすることもある</li><li>コードの複雑さが軽減されるなら、コードをコピーする</li><li>コードの重複排除をするのは状態・結合・複雑性を増さない時のみに限る</li></ul></blockquote><p>この記事を読む前に、これらに関連した次のような考え・理解を持っていました。</p><ul><li>SSOT(Single Source Of Truth)は大切（<strong>状態</strong>）<ul><li>DBの正規化も同じ発想</li><li>Reduxは必ず1つの場所で管理された状態を参照する仕組みを提供</li><li>状態を別々の場所で管理して同期させるような設計は、正しく実装するのがとても大変<ul><li>フロントにおけるデータとDOMの同期処理がそれ</li><li>View = Function(Model) という関数の発想でデータ=&gt;DOMという単一方向の流れによって
+SSOTを実現しているのがReact</li></ul></li></ul></li><li>1つのコードに2つ以上のコードが依存するような設計は慎重な判断が必要(<strong>結合</strong>)<ul><li>ある関数が解決したい課題のレイヤーを整えるために下位レイヤーの課題を別の関数に任せるという場合、
+その下位レイヤーを担当する関数が元々の関数から呼び出される場合には注意を払うべき結合だとは考えません</li><li>しばしば依存関係の整理をまちがえて、下位レイヤーの関数に複数の処理が依存している場合、
+引数や内部の分岐を増やすことを検討する場合があります
+このようなケースでは最終的に下位レイヤーの関数をコピーして別々の関数として扱うことでコードをシンプルにします</li></ul></li><li>コードのコピーや同じ目的の修正を複数の場所で実施している場合、共通化が必要なサイン(<strong>結合、コード量</strong>)<ul><li>共通処理が担当するタスクが出来るだけ小さくなるように十分に注意して設計する必要がある</li></ul></li></ul><p>記事を読むまでこれらの考え方は関係性はを整理できておらず、「ケースバイケースで使い分ける」程度の認識でした。
+今後はこれらの設計上の考慮事項についてより曖昧さを排除した判断が可能になると思いますし、
+言語化されることによってチームでの方針の共有にも役立ちそうです。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="アプリケーションコードをシンプルに">アプリケーションコードをシンプルに<a class="hash-link" href="#アプリケーションコードをシンプルに" title="Direct link to heading">​</a></h2><p>私のアプリケーションの見方としては「データを表示する」というごく当たり前の機能の実現に8~9割程度のコードが書かれており、
+アプリケーション固有のロジックは2割にも満たない、と思っています。
+その2割程度のロジックも、きちんと設計を決めて書かないとどんどん散らばって書かれメンテナンスで苦労することになります。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="レイヤーを統合でコードを削るアプローチ">レイヤーを統合でコードを削るアプローチ<a class="hash-link" href="#レイヤーを統合でコードを削るアプローチ" title="Direct link to heading">​</a></h3><p>いろいろなレイヤーの登場するAWSを利用したSPA構成について書いてみます。</p><ul><li>フロント(React, Vue, Svelte)</li><li>アプリケーション層</li><li>DTO層</li><li>DB(RDB, NoSQL)</li></ul><p>平凡な構成を意識しましたが、
+以下で紹介するフレームワークたちはこれらの層を統合して開発効率を上げています。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="next-nuxt-remix">Next, Nuxt, Remix<a class="hash-link" href="#next-nuxt-remix" title="Direct link to heading">​</a></h4><p>これらのフレームワークはフロントからサーバー側のアプリケーションまでを
+ひとつのReact(あるいはVue)プロジェクトとして記述出来るようにしたソリューションです。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="blitzjs--next--prisma">Blitz.js = Next + Prisma<a class="hash-link" href="#blitzjs--next--prisma" title="Direct link to heading">​</a></h4><blockquote><p>“Zero-API” data layer lets you import server code directly into your React components
+instead of having to manually add API endpoints and do client-side fetching and caching.</p></blockquote><p>Nextをベースに、PrismaというORMを活用してデータアクセスについてのレイヤーも取り除いてしまおうという、
+かなり野心的なフレームワークです。</p><p>ここまではフロントとサーバー側のアプリケーション層を統合するソリューションを列挙しました。
+そのため使用言語はTypeScript一択ですね。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="graphqlapollo-hasura-appsync">GraphQL(Apollo, Hasura, AppSync)<a class="hash-link" href="#graphqlapollo-hasura-appsync" title="Direct link to heading">​</a></h4><p>GraphqlはSchema定義をベースにDBのテーブルとそこへアクセスするために必要なAPIをまとめて準備してしまいます。
+自動で準備されるAPIは単純なものに限りますが、カスタムな処理を実施するためのAPIももちろん追加できます。</p><p>GraphQLについては業務でも使用したことがあります。確かにかなり管理が必要なコードが減り、
+テーブルへのアクセス制限などもディレクティブによって宣言的に記述出来るため、可読性に優れます。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="railsの思想に学ぶシンプル">Railsの思想に学ぶシンプル<a class="hash-link" href="#railsの思想に学ぶシンプル" title="Direct link to heading">​</a></h3><p>Railsは成熟しているWEBフレームワークのひとつですが、
+WEBフレームワークによる開発には多くのメリットがあります。</p><p><a href="https://postd.cc/rails-doctrine/#omakase" target="_blank" rel="noopener noreferrer">Railsの基本理念 : Railsの生みの親が掲げる8つの原則</a></p><p>今回は「シンプル」という文脈で紹介するにあたり、以下をピックしたいと思います。</p><blockquote><p>Railsの生産性に関する初期のモットーは、”君は美しい唯一無二の雪の結晶というわけではない”でした。
+これは、無駄な個人プレーをやめれば、平凡な決断で苦労することなく、重要な場面で仕事のスピードが増す、
+ということを言っています。</p></blockquote><blockquote><p>メニューは”おまかせ”で
+レストランに行ってどれがおいしいのか分からない時ってありますよね。
+何が”いい料理”なのか理解すらしていなくても、
+そのレストランのシェフに選んでもらえばおいしいものを食べることができるでしょう。
+これが”おまかせ”です。
+おししいものを選ぶのに、料理のエキスパートになる必要はありませんし、
+運に任せてメニューから料理を選ぶ必要もないのです。</p></blockquote><p>Railsはフレームワークを提供しているのですから、それらは"おまかせ"であるわけですね。</p><p>デフォルトで何か良いかを教えてくれる、何か難しい問題にぶつかったのなら、その時にデフォルトを他のものに交換出来る。
+そういった存在はありがたいものです。</p><p>不運にも信頼できるフレームワークが無い環境においても、
+この思想がチームで共有出来ているのなら、「方針を決めてから進む（個人プレーはしない）」ことで、
+シンプルさを保つことが出来るはずです。</p><div class="footnotes"><hr><ol><li id="fn-1">Object-Relational Mapping<a href="#fnref-1" class="footnote-backref">↩</a></li><li id="fn-2">Reactの場合、「HTML, CSSを完全にそのまま活かせる」訳ではありませんが、
+ReactのJSXが開発者に要求するHTML, CSSの使用方法の変更も個人の感想としてはごくわずかです。
+CSSのクラスを渡すために、<code>class</code>ではなく<code>className</code>と記述すること、
+styleを記述するにはJSS（例えば<code>justify-content: space-evenly;</code>ではなく<code>{ justifyContent: "space-evenly" }</code>と記述する）を使用するといった違いは、
+すぐに覚えて慣れます。<a href="#fnref-2" class="footnote-backref">↩</a></li></ol></div>]]></content:encoded>
+            <category>dev</category>
+            <category>simple</category>
+            <category>kiss</category>
+            <category>oop</category>
+        </item>
+    </channel>
+</rss>
