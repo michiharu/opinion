@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>OPINIONS Blog</title>
-        <link>https://your-docusaurus-test-site.com/blog</link>
+        <link>https://your-docusaurus-test-site.com/opinions/blog</link>
         <description>OPINIONS Blog</description>
         <lastBuildDate>Tue, 03 May 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[シンプルさについて語るときに僕の語ること]]></title>
-            <link>https://your-docusaurus-test-site.com/blog/simple-is</link>
+            <link>https://your-docusaurus-test-site.com/opinions/blog/simple-is</link>
             <guid>simple-is</guid>
             <pubDate>Tue, 03 May 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[タイトルの通りシンプルさについて語りたいと思います。]]></description>
@@ -52,7 +52,7 @@ UNIX哲学を "<strong>Keep it Simple, Stupid</strong>" （KISS原則、「シ�
 キーワード引数では引数の意味と渡す値を1:1で対応させるためミスが起きにくいです。</p><p>ちなみにPythonコミュニティーではキーワード引数の利用はオプションですが、Swiftではキーワード有りで呼び出す方法がデフォルトです。
 一応Swiftでもキーワードを宣言せずに呼び出せる関数も作れます。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="javaコミュニティーによるnnを避ける工夫">JavaコミュニティーによるN:Nを避ける工夫<a class="hash-link" href="#javaコミュニティーによるnnを避ける工夫" title="Direct link to heading">​</a></h3><p>Javaにはキーワード引数のような機能はありませんが、呼び出し元と呼び出し先で順序を間違えるリスクはもちろん致命的であると認識されています。
 そのためコンストラクタに3つ以上の引数を渡す場合は、<code>Builder</code>パターンという方法によってN:Nではなく1:1の記述によって
-順序によるミスを防いでいます。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="builderパターンを使わないケース"><code>Builder</code>パターンを使わないケース<a class="hash-link" href="#builderパターンを使わないケース" title="Direct link to heading">​</a></h4><p><img loading="lazy" alt="`Builder`パターンを使わないケース" src="/assets/images/not-builder-dabbee68680453992a65c6805d65e79b.png" width="1738" height="132" class="img_E7b_"></p><h4 class="anchor anchorWithStickyNavbar_mojV" id="builderパターンを使うケース"><code>Builder</code>パターンを使うケース<a class="hash-link" href="#builderパターンを使うケース" title="Direct link to heading">​</a></h4><p><img loading="lazy" alt="`Builder`パターンを使うケース" src="/assets/images/with-builder-46e5bbd133e02daee8ebc4ddab9a814d.png" width="1522" height="300" class="img_E7b_"></p><h3 class="anchor anchorWithStickyNavbar_mojV" id="jstsコミュニティーによるnnを避ける工夫">JS/TSコミュニティーによるN:Nを避ける工夫<a class="hash-link" href="#jstsコミュニティーによるnnを避ける工夫" title="Direct link to heading">​</a></h3><p>JavaScript, TypeScriptにはキーボード引数がありませんが、
+順序によるミスを防いでいます。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="builderパターンを使わないケース"><code>Builder</code>パターンを使わないケース<a class="hash-link" href="#builderパターンを使わないケース" title="Direct link to heading">​</a></h4><p><img loading="lazy" alt="`Builder`パターンを使わないケース" src="/opinions/assets/images/not-builder-dabbee68680453992a65c6805d65e79b.png" width="1738" height="132" class="img_E7b_"></p><h4 class="anchor anchorWithStickyNavbar_mojV" id="builderパターンを使うケース"><code>Builder</code>パターンを使うケース<a class="hash-link" href="#builderパターンを使うケース" title="Direct link to heading">​</a></h4><p><img loading="lazy" alt="`Builder`パターンを使うケース" src="/opinions/assets/images/with-builder-46e5bbd133e02daee8ebc4ddab9a814d.png" width="1522" height="300" class="img_E7b_"></p><h3 class="anchor anchorWithStickyNavbar_mojV" id="jstsコミュニティーによるnnを避ける工夫">JS/TSコミュニティーによるN:Nを避ける工夫<a class="hash-link" href="#jstsコミュニティーによるnnを避ける工夫" title="Direct link to heading">​</a></h3><p>JavaScript, TypeScriptにはキーボード引数がありませんが、
 Javaとは違いJavaScriptは構造体（オブジェクト）の取り扱いが大変簡単であるため、
 複数の引数を必要とする場合は1つのオブジェクトに値を格納して渡すことでN:Nを避けることが出来ます。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="sqlに感じるnnの課題">SQLに感じるN:Nの課題<a class="hash-link" href="#sqlに感じるnnの課題" title="Direct link to heading">​</a></h3><p>RDBにおいてカラムの数が10を超えることは特別に異常なことではありません。
 そしてSQL直書きで<code>INSERT</code>や<code>UPDATE</code>といった文を使用する場合は、

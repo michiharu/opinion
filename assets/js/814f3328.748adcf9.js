@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkopinions=self.webpackChunkopinions||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u30b7\u30f3\u30d7\u30eb\u3055\u306b\u3064\u3044\u3066\u8a9e\u308b\u3068\u304d\u306b\u50d5\u306e\u8a9e\u308b\u3053\u3068","permalink":"/blog/simple-is"}]}')}}]);
