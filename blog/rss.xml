@@ -13,9 +13,9 @@
             <link>https://michiharu.github.io/opinions/opinions/blog/unix-philosophy</link>
             <guid>unix-philosophy</guid>
             <pubDate>Tue, 17 May 2022 00:00:00 GMT</pubDate>
-            <description><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつか記事を書きたいと思います。]]></description>
-            <content:encoded><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつか記事を書きたいと思います。</p><ul><li><a href="/opinions/blog/unix-philosophy/">UNIX哲学に学ぶシンプル</a></li><li>Less is More</li><li>状態 &gt; 結合 &gt; 複雑性 &gt; コード量</li><li>アプリケーションコードをシンプルに</li><li>N対Nより1対1</li><li>共通化の条件</li></ul><p>書き始める前に春樹さんの次の言葉を思い出しました。</p><blockquote><p>説明しなくてはそれがわからんというのは、つまり、どれだけ説明してもわからんということだ</p></blockquote><p>説明しても分からないかもしれないけど、
-とにかく私の考えるシンプルについてちゃんとどこかに書いておきたいと思い立った次第です。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="unix哲学に学ぶシンプル">UNIX哲学に学ぶシンプル<a class="hash-link" href="#unix哲学に学ぶシンプル" title="Direct link to heading">​</a></h2><p>実際にWikiを読んでみることをお勧めしますが、
+            <description><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。]]></description>
+            <content:encoded><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。
+今日から毎日、シェアしていこうと思います。</p><ul><li><a href="/opinions/blog/unix-philosophy/">UNIX哲学に学ぶシンプル</a></li><li>Less is More</li><li>状態 &gt; 結合 &gt; 複雑性 &gt; コード量</li><li>アプリケーションコードをシンプルに</li><li>N対Nより1対1</li><li>共通化の条件</li></ul><p>書き始める前に春樹さんの次の言葉を思い出しました。</p><blockquote><p>説明しなくてはそれがわからんというのは、つまり、どれだけ説明してもわからんということだ</p></blockquote><p>説明しても分からないかもしれないけど、とにかく私の考えるシンプルについてちゃんと言葉にしたいと思います。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="unix哲学に学ぶシンプル">UNIX哲学に学ぶシンプル<a class="hash-link" href="#unix哲学に学ぶシンプル" title="Direct link to heading">​</a></h2><p>実際にWikiを読んでみることをお勧めしますが、
 <a href="https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6" target="_blank" rel="noopener noreferrer">UNIX哲学</a>には深くうなづけるたくさんの格言があります。</p><p>シンプルさこそが重要であるという考え方は、UNIXの哲学として浸透しています。
 そのUNIX哲学でシンプルさを評価している言葉やシンプルさを実現するための方法論をここで紹介します。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="シンプルさについて触れている格言">シンプルさについて触れている格言<a class="hash-link" href="#シンプルさについて触れている格言" title="Direct link to heading">​</a></h3><p>Wikiには異なる人が同じ意味の言葉を挙げていますが、まとめることはせずにそのまま列挙しました。</p><ul><li>それぞれのプログラムが1つのことをうまくこなすように<ul><li>新しい仕事をするために、新しい「機能」を追加して古いプログラムを複雑にするのではなく、
 新しいプログラムを構築する</li></ul></li><li>一つのことをうまくやるプログラムを書く</li><li>プログラムを書いたり、テストしたり、実行したりするのが簡単に行えるように</li><li>スマートなデータを使うつまらないコードを書け</li><li>小さいものは美しい</li><li>各プログラムが一つのことをうまくやるようにせよ</li><li>効率よりも移植しやすさを選べ</li><li>ソフトウェアを梃子(てこ)として利用せよ</li><li>拘束的なユーザーインターフェースは作るな</li></ul><h3 class="anchor anchorWithStickyNavbar_mojV" id="より悪いことはより良いことだ-worse-is-better">より悪いことは、より良いことだ （Worse is better）<a class="hash-link" href="#より悪いことはより良いことだ-worse-is-better" title="Direct link to heading">​</a></h3><p>リチャード・P・ガブリエルは、UNIXの重要な優位性のひとつは彼が「より悪いことは、より良いことだ」（"Worse is better"）という用語に込める
@@ -34,7 +34,7 @@ UNIX哲学を "<strong>Keep it Simple, Stupid</strong>" （KISS原則、「シ�
 1は男性（1は女性）、36が年齢を意味しているとしましょう。<code>{ info: string }</code>という構造はシンプルですね。<br>
 しかし、その代わりに<code>{ "sex": "man", "age": 36 }</code>というより複雑なデータ構造を使うことにより、
 そのデータを扱うプログラムをシンプルにすることが出来る、ということだと解釈してください。</li></ul></li><li>このルールは、プロジェクトに携わるどの開発者にとってもプログラムを読みやすくすることで、プログラムの保守を可能にすることを目的としています。</li></ul></li><li><strong>沈黙のルール</strong> 余計な出力をすべきではない 他の開発者にとってただ邪魔なだけである<ul><li>開発者は、不要な出力をしないようにプログラムを設計する必要があります。</li><li>このルールは、他のプログラムや開発者が、冗長な出力を解析することなく、プログラムの出力から必要な情報を選び出せるようにすることを目的としています。</li></ul></li><li><strong>修復のルール</strong> 失敗しなければならないときは、騒がしく、かつできるだけ早く失敗せよ<ul><li>開発者は、故障の原因が特定しやすく、診断しやすい、つまり「音を立てて故障する」プログラムを設計する必要があります。</li><li>このルールは、プログラムからの不正な出力が入力となり、他のコードの出力が検出されずに破損することを防ぐことを目的としています。</li></ul></li><li><strong>生成のルール</strong> hand-hackingは避けよ<ul><li>プログラムを書けるときに、プログラムを書くためにプログラムを書け。</li><li>開発者は手書きでコードを書くことを避け、代わりに抽象的な高水準プログラムを書いて、コードを生成する必要があります。</li><li>このルールは、ヒューマンエラーを減らし、時間を節約することを目的としています。</li></ul></li></ul><h2 class="anchor anchorWithStickyNavbar_mojV" id="まとめ">まとめ<a class="hash-link" href="#まとめ" title="Direct link to heading">​</a></h2><p>UNIX哲学においてシンプルこそが最も重要だと考えられていますが、
-シンプルに開発するためのたくさんのヒントがUNIX哲学には含まれています。</p><p>今日このブログを読んで１つだけ、お気に入りの格言を覚えてもらえたらと思います。</p>]]></content:encoded>
+シンプルに開発するためのたくさんのヒントがUNIX哲学には含まれています。</p><p>今日このブログを読んで１つだけ、お気に入りの格言を見つけて覚えてもらえたらと思います。</p>]]></content:encoded>
             <category>dev</category>
             <category>simple</category>
             <category>kiss</category>
