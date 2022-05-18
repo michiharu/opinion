@@ -2,11 +2,57 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://michiharu.github.io/opinions/opinions/blog</id>
     <title>OPINIONS Blog</title>
-    <updated>2022-05-17T00:00:00.000Z</updated>
+    <updated>2022-05-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://michiharu.github.io/opinions/opinions/blog"/>
     <subtitle>OPINIONS Blog</subtitle>
     <icon>https://michiharu.github.io/opinions/opinions/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Less is More]]></title>
+        <id>less-is-more</id>
+        <link href="https://michiharu.github.io/opinions/opinions/blog/less-is-more"/>
+        <updated>2022-05-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつか記事を書きたいと思います。]]></summary>
+        <content type="html"><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつか記事を書きたいと思います。</p><p>今回はシンプルを生み出す環境について考えます。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="less-is-more">Less is More<a class="hash-link" href="#less-is-more" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_mojV" id="easyよりもsimpleを">EasyよりもSimpleを<a class="hash-link" href="#easyよりもsimpleを" title="Direct link to heading">​</a></h3><p>VueはEasy、ReactはSimpleであると言われます。</p><p>ReactがVueよりもシンプルであるにも関わらず難しいと言われている理由が、
+関数型プログラミングへのパラダイムシフトが要求されるためだと思います。</p><p>Reactの公式ページでは「関数型プログラミングの知識は不要である」と謳っていますが、
+Reactの思想の出身としては紛れもなく関数型プログラミングであり、
+私は関数型プログラミングでUIを構築出来ることこそがReact最大の武器だと考えています。</p><p>その武器が、なぜ難しいのでしょうか？</p><p>そのように評価される理由の１つは、エンジニアは大抵、命令型プログラミングを最初に経験しているためです。
+命令型と関数型、どちらの方が簡単かというと慣れによる偏りを除けば関数型プログラミングの方が簡単です。
+（もちろん個人の見解です。）</p><p>ただ関数型プログラミングを見慣れているエンジニアが少数派であるため、
+初見ではReactのコードを難しく感じている、ということだと思います。</p><p>なぜVueは簡単なのでしょうか？</p><p>それはフロントエンドエンジニアの必須知識であるHTML, CSSを完全にそのまま活かせるからではないでしょうか。
+つまり大きなパラダイムシフトを要求されることなく小さな学習ステップでVueを始めることが出来る<sup id="fnref-2"><a href="#fn-2" class="footnote-ref">2</a></sup>、ということだと思います。</p><p>今度は、フロントエンドエンジニアにとって小さな学習ステップでスタートできるVueが、
+なぜReactよりもシンプルではないのでしょうか？</p><p>それは様々な開発時の要件それぞれにショートハンドを用意していて、
+開発が進むにつれてそれらの記法が混ざっていくことになり、
+コンポーネントが管理するデータの振る舞いもその記述方法の数だけ異なります。</p><p>「〇〇がしたい」ということをReactより短い記述で実現できるケースが多いですが、
+そのデメリットとして開発者がそれらのショートハンドを理解するための学習コストや、
+関数型プログラミングではないため、変数の変化をきちんと理解・管理するためのスキルが要求されるなどが挙げられると思います。</p><p>関数型プログラミングのパラダイムのReact vs マルチパラダイムのVueという文脈以外でどちらがシンプルであるかを比較するために、
+提供されている手段の数に着目することは参考になると思います。</p><p>ReactはVueよりもより少ない手段が提供されていますが、
+ReactとVueを使った開発で実現できることの差はありません。</p><p>そう考えるとReactのコードがシンプルになることは容易に想像できると思います。</p><p>コードの書き手側の気持ちとしては短く書けた方が楽かもしれませんが、読み手側の気持ちとしては書き方に幅がない方が理解が簡単です。
+この視点において、Reactが支持される理由とGo言語が支持される理由は同じだと思います。</p><p>ちなみに<a href="https://trends.google.co.jp/trends/explore?q=%2Fm%2F012l1vxv,%2Fm%2F0j45p7w,%2Fg%2F11c0vmgx5d&amp;geo=,,&amp;date=today%205-y,today%205-y,today%205-y&amp;cat=13#TIMESERIES" target="_blank" rel="noopener noreferrer">React vs Vue vs AngularJSのGoogleトレンドによる比較</a>
+を見れば、これらのライブラリーのうちReactが最も人気であるということがはっきり分かります。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="linterによってシンプルになったjavascript">LinterによってシンプルになったJavaScript<a class="hash-link" href="#linterによってシンプルになったjavascript" title="Direct link to heading">​</a></h3><p>JavaScriptは非常に歴史のある言語ですね。そして近年はとても人気のある言語の一つです。</p><p>しかし少なくとも15年前はJavaScriptの一部の雑な言語使用を理由に
+開発者からは倦厭されがちな言語だったと記憶しています。</p><p>こちらはJavaScriptの雑な仕様を活用したハックの例です。解説がないと訳がわからないですね。</p><div class="codeBlockContainer_I0IT language-js theme-code-block"><div class="codeBlockContent_wNvx" style="color:#393A34;background-color:#f6f8fa"><pre tabindex="0" class="prism-code language-js codeBlock_jd64 thin-scrollbar"><code class="codeBlockLines_mRuA"><span class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">!</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">[</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token operator" style="color:#393A34">+</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">+</span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token operator" style="color:#393A34">-</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token plain"> fail</span><br></span></code></pre><button type="button" aria-label="Copy code to clipboard" title="Copy" class="copyButton_eDfN clean-btn"><span class="copyButtonIcons_W9eQ" aria-hidden="true"><svg class="copyButtonIcon_XEyF" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_i9w9" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div><p>他に、普通に開発していてもJavaScriptをよく知っていないとデバックの難しい仕様も多数あります。</p><ul><li><code>==</code>と<code>===</code>で異なる結果になるケースがある</li><li><code>typeof null === 'object'</code>は<code>true</code></li></ul><p>Badなパーツ（言語仕様）があるからこそ、『JavaScript Good Parts』という本も出版されました。</p><p>そして時代は流れました。
+私がフルコミットのエンジニアになった6年前には既に、JavaScriptの悪い仕様に依存したコードが書けないように、
+ESLintを活用して開発するのが当たり前になっていました。</p><p>歴史のあるプログラミング言語は後方互換性のために仕様を削ることが難しいです。
+しかし新規プロジェクトでは洗練されていない言語仕様を前提とするようなコードを書きたくありません。
+このような経緯から現在では元々言語が持っている仕様の一部を制限して開発できるような仕組みが整っています。</p><p>多くの言語仕様を持つ言語の性質について「言語にパワーがある」という表現をしますが、これは必ずしも褒め言葉ではありません。
+たくさんの言語仕様があるということは、それだけコードが無秩序になりやすいためです。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="シンプルに設計されたgo言語">シンプルに設計されたGo言語<a class="hash-link" href="#シンプルに設計されたgo言語" title="Direct link to heading">​</a></h3><p>モダンな言語の1つにGoogleが開発しているGo言語があります。
+JavaScriptとは対照的に歴史の浅い言語で、言語のパワーを極限まで削ぎ落として設計された言語です。</p><p>言語仕様がとても絞られているために初心者が仕様を覚えて戦力になるまで1ヶ月程度である、という話(噂？)です。</p><p>速度についてはC, C++といった最速を誇る言語よりやや遅いですが、Pythonのような言語の約10倍速いです。
+この背景としては、言語仕様が少ないためコンパイラー側から見た時のインプットがシンプルとなり、
+全体的な言語としての開発や局所的なパフォーマンスチューニングが実施可能だったのだろうと思います。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="まとめ">まとめ<a class="hash-link" href="#まとめ" title="Direct link to heading">​</a></h2><p>コードは書く機会より読まれる機会の方が必ず多くなります。
+書いてすぐ読むだけでなく、半年後や1年後に読むこともあるでしょう。</p><p>より少ない知識で読めるコードはそれだけシンプルで読みやすいコードだと思います。</p><p>TypeScriptによる開発経験が長いので、素のnodejs、ESLint無しの環境でコードを書いていて
+全然エディターが叱ってくれないので、そのことがこんなに怖いのかと思い知る今日この頃です。</p><div class="footnotes"><hr><ol><li id="fn-2">Reactの場合、「HTML, CSSを完全にそのまま活かせる」訳ではありませんが、
+ReactのJSXが開発者に要求するHTML, CSSの使用方法の変更も個人の感想としてはごくわずかです。
+CSSのクラスを渡すために、<code>class</code>ではなく<code>className</code>と記述すること、
+styleを記述するにはJSS（例えば<code>justify-content: space-evenly;</code>ではなく<code>{ justifyContent: "space-evenly" }</code>と記述する）を使用するといった違いは、
+すぐに覚えて慣れます。<a href="#fnref-2" class="footnote-backref">↩</a></li></ol></div>]]></content>
+        <author>
+            <name>Fulkagawa Michiharu</name>
+            <uri>https://github.com/michiharu</uri>
+        </author>
+        <category label="dev" term="dev"/>
+        <category label="simple" term="simple"/>
+        <category label="less is more" term="less is more"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[UNIX哲学に学ぶシンプル]]></title>
         <id>unix-philosophy</id>

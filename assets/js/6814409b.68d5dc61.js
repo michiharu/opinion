@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkopinions=self.webpackChunkopinions||[]).push([[847],{4154:function(s){s.exports=JSON.parse('{"allTagsPath":"/opinions/blog/tags","name":"less is more","count":1,"permalink":"/opinions/blog/tags/less-is-more"}')}}]);
