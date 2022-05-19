@@ -2,18 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://michiharu.github.io/opinions/opinions/blog</id>
     <title>OPINIONS Blog</title>
-    <updated>2022-05-18T00:00:00.000Z</updated>
+    <updated>2022-05-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://michiharu.github.io/opinions/opinions/blog"/>
     <subtitle>OPINIONS Blog</subtitle>
     <icon>https://michiharu.github.io/opinions/opinions/img/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[状態 > 結合 > 複雑性 > コード量]]></title>
+        <id>stateless-is-the-most-important</id>
+        <link href="https://michiharu.github.io/opinions/opinions/blog/stateless-is-the-most-important"/>
+        <updated>2022-05-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。]]></summary>
+        <content type="html"><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。</p><ul><li>UNIX哲学に学ぶシンプル**</li><li>Less is More</li><li><strong>状態 &gt; 結合 &gt; 複雑性 &gt; コード量</strong></li><li>アプリケーションコードをシンプルに</li><li>N対Nより1対1</li><li>共通化の条件</li></ul><p>今回は３回目、シンプルとは反対の概念である複雑さの評価です。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="状態--結合--複雑性--コード量">状態 &gt; 結合 &gt; 複雑性 &gt; コード量<a class="hash-link" href="#状態--結合--複雑性--コード量" title="Direct link to heading">​</a></h2><p>こちらの記事の受け売りですが、激しく同意できる内容でした。</p><p><a href="https://ohbarye.hatenablog.jp/entry/2022/01/31/state-coupling-complexity-code" target="_blank" rel="noopener noreferrer">状態、結合、複雑性、コード量の順に最適化する</a></p><p>リンク先は5〜6分で読める短い内容なので是非読んでみてください。</p><p>記事の内容をまとめると次の通りです。</p><blockquote><p>状態 (state)、結合 (coupling)、複雑性 (complexity)、コード量 (code) の順に削減することでコードを最適化すべき</p><ul><li>コードがよりステートレスになるなら、結合を増やすこともいとわない</li><li>結合を減らすためには、コードをもっと複雑にすることもある</li><li>コードの複雑さが軽減されるなら、コードをコピーする</li><li>コードの重複排除をするのは状態・結合・複雑性を増さない時のみに限る</li></ul></blockquote><p>この記事を読む前に、これらに関連した次のような考え・理解を持っていました。</p><ul><li>SSOT(Single Source Of Truth)は大切（<strong>状態</strong>）<ul><li>DBの正規化も同じ発想</li><li>Reduxは必ず1つの場所で管理された状態を参照する仕組みを提供</li><li>状態を別々の場所で管理して同期させるような設計は、正しく実装するのがとても大変<ul><li>フロントにおけるデータとDOMの同期処理がそれ</li><li>View = Function(Model) という関数の発想でデータ=&gt;DOMという単一方向の流れによって
+SSOTを実現しているのがReact</li></ul></li></ul></li><li>1つのコードに2つ以上のコードが依存するような設計は慎重な判断が必要(<strong>結合</strong>)<ul><li>ある関数が解決したい課題のレイヤーを整えるために下位レイヤーの課題を別の関数に任せるという場合は注意を払うべき結合だとは考えません</li><li>下位レイヤーの関数に複数の処理を依存させている場合、
+しばしば処理の抽象化が不十分だと要件の変更などにより下位レイヤーの関数の内部の分岐追加などを検討する場合があります。
+このようなケースでは下位レイヤーの関数をコピーすべきです。別々の関数として扱うことでコードをシンプルにします。</li></ul></li><li>同じ目的の修正が複数の場所で必要な場合は共通化が必要なサイン(<strong>結合、コード量</strong>)<ul><li>共通処理が担当するタスクが出来るだけ小さくなるように十分に注意して設計する必要がある</li></ul></li></ul><p>記事を読むまでこれらの考え方は関係性はを整理できておらず、「ケースバイケースで使い分ける」程度の認識でした。
+今後はこれらの設計上の考慮事項についてより曖昧さを排除した判断が可能になると思います。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="まとめ">まとめ<a class="hash-link" href="#まとめ" title="Direct link to heading">​</a></h2><p>設計の方針が明確に言語化されることによってチームでの共有に役立ちそうです。
+複雑さを解消するために考える機会は無数にあるので積極的に活用していこうと思います。</p>]]></content>
+        <author>
+            <name>Fulkagawa Michiharu</name>
+            <uri>https://github.com/michiharu</uri>
+        </author>
+        <category label="dev" term="dev"/>
+        <category label="simple" term="simple"/>
+        <category label="kiss" term="kiss"/>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Less is More]]></title>
         <id>less-is-more</id>
         <link href="https://michiharu.github.io/opinions/opinions/blog/less-is-more"/>
         <updated>2022-05-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつか記事を書きたいと思います。]]></summary>
-        <content type="html"><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつか記事を書きたいと思います。</p><p>今回はシンプルを生み出す環境について考えます。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="less-is-more">Less is More<a class="hash-link" href="#less-is-more" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_mojV" id="easyよりもsimpleを">EasyよりもSimpleを<a class="hash-link" href="#easyよりもsimpleを" title="Direct link to heading">​</a></h3><p>VueはEasy、ReactはSimpleであると言われます。</p><p>ReactがVueよりもシンプルであるにも関わらず難しいと言われている理由が、
+        <summary type="html"><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。]]></summary>
+        <content type="html"><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。</p><ul><li>UNIX哲学に学ぶシンプル</li><li><strong>Less is More</strong></li><li>状態 &gt; 結合 &gt; 複雑性 &gt; コード量</li><li>アプリケーションコードをシンプルに</li><li>N対Nより1対1</li><li>共通化の条件</li></ul><p>今回は２回目、シンプルを生み出す環境について考えます。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="less-is-more">Less is More<a class="hash-link" href="#less-is-more" title="Direct link to heading">​</a></h2><h3 class="anchor anchorWithStickyNavbar_mojV" id="easyよりもsimpleを">EasyよりもSimpleを<a class="hash-link" href="#easyよりもsimpleを" title="Direct link to heading">​</a></h3><p>VueはEasy、ReactはSimpleであると言われます。</p><p>ReactがVueよりもシンプルであるにも関わらず難しいと言われている理由が、
 関数型プログラミングへのパラダイムシフトが要求されるためだと思います。</p><p>Reactの公式ページでは「関数型プログラミングの知識は不要である」と謳っていますが、
 Reactの思想の出身としては紛れもなく関数型プログラミングであり、
 私は関数型プログラミングでUIを構築出来ることこそがReact最大の武器だと考えています。</p><p>その武器が、なぜ難しいのでしょうか？</p><p>そのように評価される理由の１つは、エンジニアは大抵、命令型プログラミングを最初に経験しているためです。
@@ -62,7 +82,7 @@ styleを記述するにはJSS（例えば<code>justify-content: space-evenly;</c
         <updated>2022-05-17T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。]]></summary>
         <content type="html"><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。
-今日から毎日、シェアしていこうと思います。</p><ul><li><a href="/opinions/blog/unix-philosophy/">UNIX哲学に学ぶシンプル</a></li><li>Less is More</li><li>状態 &gt; 結合 &gt; 複雑性 &gt; コード量</li><li>アプリケーションコードをシンプルに</li><li>N対Nより1対1</li><li>共通化の条件</li></ul><p>書き始める前に春樹さんの次の言葉を思い出しました。</p><blockquote><p>説明しなくてはそれがわからんというのは、つまり、どれだけ説明してもわからんということだ</p></blockquote><p>説明しても分からないかもしれないけど、とにかく私の考えるシンプルについてちゃんと言葉にしたいと思います。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="unix哲学に学ぶシンプル">UNIX哲学に学ぶシンプル<a class="hash-link" href="#unix哲学に学ぶシンプル" title="Direct link to heading">​</a></h2><p>実際にWikiを読んでみることをお勧めしますが、
+今日から毎日、シェアしていこうと思います。</p><ul><li><strong>UNIX哲学に学ぶシンプル</strong></li><li>Less is More</li><li>状態 &gt; 結合 &gt; 複雑性 &gt; コード量</li><li>アプリケーションコードをシンプルに</li><li>N対Nより1対1</li><li>共通化の条件</li></ul><p>書き始める前に春樹さんの次の言葉を思い出しました。</p><blockquote><p>説明しなくてはそれがわからんというのは、つまり、どれだけ説明してもわからんということだ</p></blockquote><p>説明しても分からないかもしれないけど、とにかく私の考えるシンプルについてちゃんと言葉にしたいと思います。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="unix哲学に学ぶシンプル">UNIX哲学に学ぶシンプル<a class="hash-link" href="#unix哲学に学ぶシンプル" title="Direct link to heading">​</a></h2><p>実際にWikiを読んでみることをお勧めしますが、
 <a href="https://ja.wikipedia.org/wiki/UNIX%E5%93%B2%E5%AD%A6" target="_blank" rel="noopener noreferrer">UNIX哲学</a>には深くうなづけるたくさんの格言があります。</p><p>シンプルさこそが重要であるという考え方は、UNIXの哲学として浸透しています。
 そのUNIX哲学でシンプルさを評価している言葉やシンプルさを実現するための方法論をここで紹介します。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="シンプルさについて触れている格言">シンプルさについて触れている格言<a class="hash-link" href="#シンプルさについて触れている格言" title="Direct link to heading">​</a></h3><p>Wikiには異なる人が同じ意味の言葉を挙げていますが、まとめることはせずにそのまま列挙しました。</p><ul><li>それぞれのプログラムが1つのことをうまくこなすように<ul><li>新しい仕事をするために、新しい「機能」を追加して古いプログラムを複雑にするのではなく、
 新しいプログラムを構築する</li></ul></li><li>一つのことをうまくやるプログラムを書く</li><li>プログラムを書いたり、テストしたり、実行したりするのが簡単に行えるように</li><li>スマートなデータを使うつまらないコードを書け</li><li>小さいものは美しい</li><li>各プログラムが一つのことをうまくやるようにせよ</li><li>効率よりも移植しやすさを選べ</li><li>ソフトウェアを梃子(てこ)として利用せよ</li><li>拘束的なユーザーインターフェースは作るな</li></ul><h3 class="anchor anchorWithStickyNavbar_mojV" id="より悪いことはより良いことだ-worse-is-better">より悪いことは、より良いことだ （Worse is better）<a class="hash-link" href="#より悪いことはより良いことだ-worse-is-better" title="Direct link to heading">​</a></h3><p>リチャード・P・ガブリエルは、UNIXの重要な優位性のひとつは彼が「より悪いことは、より良いことだ」（"Worse is better"）という用語に込める
