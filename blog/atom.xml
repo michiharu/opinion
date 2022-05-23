@@ -2,11 +2,51 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://michiharu.github.io/opinions/opinions/blog</id>
     <title>OPINIONS Blog</title>
-    <updated>2022-05-19T00:00:00.000Z</updated>
+    <updated>2022-05-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://michiharu.github.io/opinions/opinions/blog"/>
     <subtitle>OPINIONS Blog</subtitle>
     <icon>https://michiharu.github.io/opinions/opinions/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[アプリケーションコードをシンプルに]]></title>
+        <id>keep-your-application-code-simple</id>
+        <link href="https://michiharu.github.io/opinions/opinions/blog/keep-your-application-code-simple"/>
+        <updated>2022-05-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。]]></summary>
+        <content type="html"><![CDATA[<p>シンプルさについて語るときに僕の語ること、というテーマでいくつかの記事を書きました。</p><ul><li>UNIX哲学に学ぶシンプル</li><li>Less is More</li><li>状態 &gt; 結合 &gt; 複雑性 &gt; コード量</li><li><strong>アプリケーションコードをシンプルに</strong></li><li>N対Nより1対1</li><li>共通化の条件</li></ul><p>今回は4回目、フレームワークを使うメリットについて考えます。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="アプリケーションコードをシンプルに">アプリケーションコードをシンプルに<a class="hash-link" href="#アプリケーションコードをシンプルに" title="Direct link to heading">​</a></h2><p>フレームワークの採用には2つのメリットがあると考えています。</p><ul><li>管理対象（コード、テスト、ドキュメント）の削減</li><li>どこに何を書くべきかという規約を示してくれる</li></ul><p>私のアプリケーションの見方としては「データを表示する」というごく当たり前の機能の実現に8~9割程度のコードが書かれており、
+アプリケーション固有のロジックは2割にも満たない、と思っています。</p><p>そして多くのフレームワークがよりストレスなく少ないコードでそれらのコードが削減できるように試行錯誤しています。</p><p>また、たった2割のロジックもきちんと設計を決めて書かないとどんどん散らばって書かれだんだんと苦労することになります。
+フレームワークは「そのコードはここに書いてくださいね」という規約を持っており、
+その規約に縛られながら開発することで「この手の問題はあのファイルに書いてあるはず」ということが予想できるようになるので
+読みやすいコードとなります。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="レイヤーの統合でコードを削る">レイヤーの統合でコードを削る<a class="hash-link" href="#レイヤーの統合でコードを削る" title="Direct link to heading">​</a></h3><p>いろいろなレイヤーの登場するAWSを利用したSPA構成について書いてみます。</p><ul><li>フロント(React, Vue, Svelte)</li><li>アプリケーション層</li><li>DTO層</li><li>DB(RDB, NoSQL)</li></ul><p>平凡な構成を意識しましたが、
+以下で紹介するフレームワークたちはこれらの層を統合して開発効率を上げています。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="next-nuxt-remix">Next, Nuxt, Remix<a class="hash-link" href="#next-nuxt-remix" title="Direct link to heading">​</a></h4><p>これらのフレームワークはフロントからサーバー側のアプリケーションまでを
+ひとつのReact(あるいはVue)プロジェクトとして記述出来るようにしたソリューションです。</p><p>APIを設計して「こっちからこれを送って、こっちで受け取って」ということを考える必要がありません。</p><p>ちなみにサーバーサイドレンダリング、SSRというとちょっとかっこいいですが、昔のWEBアプリの構成は全部SSRでした。
+ただしコンポーネント志向といった考え方によってレンダリングを記述するための方法が洗練されましたし、
+フロント・サーバー連携によって表示速度は最適化され、ハイドレーションによってSPAと変わらない書き方でインタラクションを実現します。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="blitzjs--next--prisma">Blitz.js = Next + Prisma<a class="hash-link" href="#blitzjs--next--prisma" title="Direct link to heading">​</a></h4><blockquote><p>“Zero-API” data layer lets you import server code directly into your React components
+instead of having to manually add API endpoints and do client-side fetching and caching.</p></blockquote><p>Nextをベースに、PrismaというORMを活用してデータアクセスについてのレイヤーも取り除いてしまおうという、
+かなり野心的なフレームワークです。</p><p>ここまではフロントとサーバー側のアプリケーション層を統合するソリューションを列挙しました。
+そのため使用言語はTypeScript一択ですね。</p><h4 class="anchor anchorWithStickyNavbar_mojV" id="graphqlapollo-hasura-appsync">GraphQL(Apollo, Hasura, AppSync)<a class="hash-link" href="#graphqlapollo-hasura-appsync" title="Direct link to heading">​</a></h4><p>GraphqlはSchema定義をベースにDBのテーブルとそこへアクセスするために必要なAPIをまとめて準備してしまいます。
+自動で準備されるAPIは単純なものに限りますが、カスタムな処理を実施するためのAPIももちろん追加できます。</p><p>GraphQLについては業務でも使用したことがあります。確かにかなり管理が必要なコードが減り、
+テーブルへのアクセス制限などもディレクティブによって宣言的に記述出来るため、可読性に優れます。</p><h3 class="anchor anchorWithStickyNavbar_mojV" id="railsの思想に学ぶシンプル">Railsの思想に学ぶシンプル<a class="hash-link" href="#railsの思想に学ぶシンプル" title="Direct link to heading">​</a></h3><p>Railsは成熟しているWEBフレームワークのひとつですが、
+WEBフレームワークによる開発には多くのメリットがあります。</p><p><a href="https://postd.cc/rails-doctrine/#omakase" target="_blank" rel="noopener noreferrer">Railsの基本理念 : Railsの生みの親が掲げる8つの原則</a></p><p>今回は「シンプル」という文脈で紹介するにあたり、以下をピックしたいと思います。</p><blockquote><p>Railsの生産性に関する初期のモットーは、”君は美しい唯一無二の雪の結晶というわけではない”でした。
+これは、無駄な個人プレーをやめれば、平凡な決断で苦労することなく、重要な場面で仕事のスピードが増す、
+ということを言っています。</p></blockquote><blockquote><p>メニューは”おまかせ”で
+レストランに行ってどれがおいしいのか分からない時ってありますよね。
+何が”いい料理”なのか理解すらしていなくても、
+そのレストランのシェフに選んでもらえばおいしいものを食べることができるでしょう。
+これが”おまかせ”です。
+おししいものを選ぶのに、料理のエキスパートになる必要はありませんし、
+運に任せてメニューから料理を選ぶ必要もないのです。</p></blockquote><p>Railsはフレームワークを提供しているのですから、それらは"おまかせ"であるわけですね。</p><p>デフォルトで何か良いかを教えてくれる、何か難しい問題にぶつかったのなら、その時にデフォルトを他のものに交換出来る。
+そういった存在はありがたいものです。</p><h2 class="anchor anchorWithStickyNavbar_mojV" id="まとめ">まとめ<a class="hash-link" href="#まとめ" title="Direct link to heading">​</a></h2><p>不運にも信頼できるフレームワークが無い環境においても、
+この思想がチームで共有出来ているのなら、「方針を決めてから進む（個人プレーはしない）」ことで、
+シンプルさを保つことが出来るはずです。</p>]]></content>
+        <author>
+            <name>Fulkagawa Michiharu</name>
+            <uri>https://github.com/michiharu</uri>
+        </author>
+        <category label="dev" term="dev"/>
+        <category label="simple" term="simple"/>
+        <category label="kiss" term="kiss"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[状態 > 結合 > 複雑性 > コード量]]></title>
         <id>stateless-is-the-most-important</id>
